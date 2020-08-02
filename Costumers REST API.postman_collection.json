@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "72b268b8-4e9c-452a-8b28-c120f36ab5ca",
+		"name": "Costumers REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 - New Costumer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company_name\": \"Empresa Inglesa LTDA\",\n    \"company_document_number\": \"6598752300011\",\n    \"phone_number\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9080/v1/costumer",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"v1",
+						"costumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 - All Costumers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/v1/costumer/all",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"v1",
+						"costumer",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03 - Find Costumer By Company Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/v1/costumer?companyName=Empresa Americana S/A",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"v1",
+						"costumer"
+					],
+					"query": [
+						{
+							"key": "companyName",
+							"value": "Empresa Americana S/A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04 - Update Costumer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company_name\": \"Empresa S/A\",\n    \"company_document_number\": \"5094678900012\",\n    \"phone_number\": \"40028922\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9080/v1/costumer/5094678900012",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"v1",
+						"costumer",
+						"5094678900012"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05 - Disable Costumer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9080/v1/costumer/5094678900012",
+					"host": [
+						"localhost"
+					],
+					"port": "9080",
+					"path": [
+						"v1",
+						"costumer",
+						"5094678900012"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

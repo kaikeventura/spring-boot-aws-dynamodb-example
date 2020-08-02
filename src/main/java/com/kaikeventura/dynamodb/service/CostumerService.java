@@ -9,6 +9,6 @@ public interface CostumerService {
     Costumer saveCostumer(CostumerDTO costumerDTO);
     List<Costumer> findAllCostumers();
     List<Costumer> findByCompanyName(String companyName);
-    Costumer updateCostumer(CostumerDTO costumerDTO);
+    Costumer updateCostumer(String companyDocumentNumber, CostumerDTO costumerDTO);
     Costumer disableCostumer(String companyDocumentNumber);
 }

@@ -38,9 +38,9 @@ public class CostumerServiceImpl implements CostumerService {
     }
 
     @Override
-    public Costumer updateCostumer(CostumerDTO costumerDTO) {
+    public Costumer updateCostumer(String companyDocumentNumber, CostumerDTO costumerDTO) {
         Optional<Costumer> costumer =
-                costumerRepository.findByCompanyDocumentNumber(costumerDTO.getCompanyDocumentNumber());
+                costumerRepository.findByCompanyDocumentNumber(companyDocumentNumber);
 
         if(costumer.isEmpty()) {
             throw new RuntimeException("There is no customer with this document number");

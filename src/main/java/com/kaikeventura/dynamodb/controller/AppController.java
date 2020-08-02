@@ -36,14 +36,17 @@ public class AppController {
         return ResponseEntity.ok(costumerService.findAllCostumers());
     }
 
-    @PutMapping("costumer")
-    public ResponseEntity<Costumer> updateCostumer(@Valid @RequestBody CostumerDTO costumerDTO) {
-        return ResponseEntity.ok(costumerService.updateCostumer(costumerDTO));
+    @PutMapping("costumer/{companyDocumentNumber}")
+    public ResponseEntity<Costumer> updateCostumer(
+            @PathVariable("companyDocumentNumber") String companyDocumentNumber,
+            @Valid @RequestBody CostumerDTO costumerDTO
+    ) {
+        return ResponseEntity.ok(costumerService.updateCostumer(companyDocumentNumber, costumerDTO));
     }
 
-    @DeleteMapping("costumer/{companyName}")
-    public ResponseEntity<Costumer> disableCostumer(@PathVariable("companyName") String companyName) {
-        return ResponseEntity.ok(costumerService.disableCostumer(companyName));
+    @DeleteMapping("costumer/{companyDocumentNumber}")
+    public ResponseEntity<Costumer> disableCostumer(@PathVariable("companyDocumentNumber") String companyDocumentNumber) {
+        return ResponseEntity.ok(costumerService.disableCostumer(companyDocumentNumber));
     }
 
 }
